@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRPF Tax Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="calculator">
+    <h2>IRPF Calculator</h2>
+
+    <form id="taxForm">
+        <label>
+            Total Income (€):
+            <input type="number" id="income" min="0" step="0.01" required>
+        </label>
+
+        <label>
+            <input type="checkbox" id="largeFamily">
+            Large Family Discount
+        </label>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <div id="message"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

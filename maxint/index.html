@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maxint</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>maxint</h2>
+    <div class="description">
+        Software calculates the addition of all integer numbers smaller or equal to the absolute value of "value".<br>
+        - If result ≤ "maxint", returns the sum.<br>
+        - If result > "maxint" or "maxint" < 0, returns "ERROR".
+    </div>
+    <label for="value">Value (-100 to 100):</label>
+    <input type="number" id="value" placeholder="value">
+    
+    <label for="maxint">MaxInt (-100 to 100):</label>
+    <input type="number" id="maxint" placeholder="maxint">
+    
+    <button onclick="calculate()">Execute</button>
+    <div id="result"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

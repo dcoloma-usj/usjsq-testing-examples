@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COVID-19 Diagnosis App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>COVID-19 Probability Diagnosis</h2>
+
+  <div class="question">
+    <label><input type="checkbox" id="breath"> Do you experience breath problems?</label>
+  </div>
+  <div class="question">
+    <label><input type="checkbox" id="fever"> Do you have a fever? (+ 37.7ºC)</label>
+  </div>
+  <div class="question">
+    <label><input type="checkbox" id="cough"> Do you have a dry and persistent cough?</label>
+  </div>
+  <div class="question">
+    <label><input type="checkbox" id="contact"> Have you had close contact with any confirmed positive patient?</label>
+  </div>
+  <div class="question">
+    <label><input type="checkbox" id="over20"> Have you been with these symptoms for more than 20 days?</label>
+  </div>
+
+  <button onclick="runDiagnosis()">Diagnose</button>
+
+  <div class="result" id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
