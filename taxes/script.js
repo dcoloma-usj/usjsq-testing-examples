@@ -1,11 +1,14 @@
-function getIRPF(totalIncome, largeFamily) {
+function getIRPF(totalIncome) {
+
+    if (totalIncome < 0) {
+        return "INVALID";
+    }
     let remainingIncome = totalIncome;
     let tax = 0;
 
     // Possible mistake 1, wrong values
     FIRST_TAX_LIMIT = 13000;
     SECOND_TAX_LIMIT = 30000;
-    LARGE_FAMILY_DISCOUNT = 2500;
     FIRST_STEP_PERCENTAGE = 0.19;
     SECOND_STEP_PERCENTAGE = 0.24;
     THIRD_STEP_PERCENTAGE = 0.30;
@@ -36,11 +39,7 @@ function getIRPF(totalIncome, largeFamily) {
         tax += remainingIncome * THIRD_STEP_PERCENTAGE;
     }
 
-    if (largeFamily) {
-        tax -= LARGE_FAMILY_DISCOUNT;
-    }
-
-    return tax < 0 ? 0 : parseFloat(tax.toFixed(2));
+    return parseFloat(tax.toFixed(2));
 }
 
 // Form submission handler
@@ -49,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
 
         const incomeInput = document.getElementById('income');
-        const largeFamilyCheckbox = document.getElementById('largeFamily');
         const messageDiv = document.getElementById('message');
 
         const totalIncome = parseFloat(incomeInput.value);
@@ -59,8 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const largeFamily = largeFamilyCheckbox.checked;
-        const tax = getIRPF(totalIncome, largeFamily);
+        const tax = getIRPF(totalIncome);
 
         messageDiv.innerHTML = `<div class="result">IRPF Tax: ${tax.toFixed(2)}€</div>`;
     });
